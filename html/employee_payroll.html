@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payroll</title>
+</head>
+<style>
+    body {background-color: whitesmoke;}
+    .header-flex { display: flex;}
+    .header-title { display: flex; flex-direction: column; margin-left: 10px;}
+    .header-logo {height: 35px; width: 40px;}
+    .form-content { 
+        display: flex; 
+        min-height: calc(100%-80px);
+        background-color: #f7f7f7; 
+        justify-content: center;
+        align-items: center;
+        border: 0px solid green;
+    }
+    .form-head {
+        font: normal normal bold 24px/37px Roboto;
+        letter-spacing: 0px;
+        color: #42515f;
+        text-transform: capitalize;
+        opacity: 1;
+        padding-bottom: 20px;
+
+    }
+    .form{
+        padding: 50px;
+        width: 65%;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        border: 1px solid #f5f5f5;
+        border-radius: 8px;
+        opacity: 1;
+    }
+    .row-content{display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        align-items: center;
+        border: 0px solid green;}
+    .lable{min-width: 140px;}
+    label{padding: 12px 12px 12px 0px;}
+    .text{
+        font-size: 16px;
+        color: #42515f;
+        opacity: 1;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+  
+</style>
+<body>
+    <header class="header-flex">
+        <img class="header-logo" src="../photos/logo3.png">
+        <div class="header-title">
+            <div>EMPLOYEE</div>
+            <div>PAYROLL</div>
+        </div>
+    </header>   
+    <div class="form-content">
+        <form class="form">
+            <div class="form-head">Employee Payroll Form</div>
+            <div class="row-content">
+                <label class="label text">Name</label>
+                <input class="input" type="text" id="name" name="name" placeholder="Your name..">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
