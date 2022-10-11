@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/employee_payroll.css">
+    <script src="../javascript/Employee_payroll.js"></script>
     <title>Employee Payroll</title>
 </head>
+
 <body>
     <header class="header-content header">
         <div class="logo-content">
@@ -16,7 +19,7 @@
                 <span class="emp-text emp-payroll">PAYROLL</span>
             </div>
         </div>
-    </header>   
+    </header>
     <div class="form-content">
         <form class="form" action="#" onsubmit="save();return false">
             <div class="form-head">Employee Payroll Form</div>
@@ -28,29 +31,25 @@
                 <label class="label text  label-fields" for="profile">Profile </label>
                 <div class="profile-radio-content">
                     <label>
-                        <input type="radio" id="profile1" name="profile"
-                        value="" required>
+                        <input type="radio" id="profile1" name="profile" value="" required>
                         <img class="profile" id="image1" src="../photos/profile2.webp">
                     </label>
                     <label>
-                        <input type="radio" id="profile2" name="profile"
-                        value="" required>
+                        <input type="radio" id="profile2" name="profile" value="" required>
                         <img class="profile" id="image2" src="../photos/profile4.png">
                     </label>
                     <label>
-                        <input type="radio" id="profile3" name="profile"
-                        value="" required>
+                        <input type="radio" id="profile3" name="profile" value="" required>
                         <img class="profile" id="image3" src="../photos/profile8.jpg">
                     </label>
                     <label>
-                        <input type="radio" id="profile4" name="profile"
-                        value="" required>
+                        <input type="radio" id="profile4" name="profile" value="" required>
                         <img class="profile" id="image4" src="../photos/profile7.jpg">
                     </label>
                 </div>
             </div>
             <div class="row-content">
-                <label class="label text  label-fields" for="gender">gender</label>
+                <label class="label text  label-fields" for="gender">Gender</label>
                 <div>
                     <input type="radio" id="maile" name="gender" value="male">
                     <label class="text" for="male">Male</label>
@@ -75,8 +74,8 @@
             </div>
             <div class="row-content">
                 <label class="label text  label-fields" for="salary">Choose salary: </label>
-                <input class="input" type="range" name="salary" id="salary" min="300000"
-                max="500000" step="100" value="400000">
+                <input class="input" type="range" name="salary" id="salary" min="300000" max="500000" step="100"
+                    value="400000" onclick="selectRange()">
                 <output class="salary-output text" for="salary">400000</output>
             </div>
             <div class="row-content">
@@ -154,12 +153,4 @@
     </div>
 </body>
 
-<script>
-    let salaryRangeInputEle = document.querySelector('#salary');
-    let output = document.querySelector('.salary-output');
-    output.innerHTML = salaryRangeInputEle.value;
-    salaryRangeInputEle.addEventListener('change',function(){
-        output.textContent = salaryRangeInputEle.value;
-    });
-</script>
 </html>
