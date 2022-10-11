@@ -1,11 +1,3 @@
-/*function selectRange(){
-    let salaryRangeInputEle = document.querySelector('#salary');
-    let output = document.querySelector('.salary-output');
-    output.innerHTML = salaryRangeInputEle.value;
-    salaryRangeInputEle.addEventListener('input',function(){
-        output.textContent = salaryRangeInputEle.value;
-    });
-}*/
 
 window.addEventListener('DOMContentLoaded',(event)=>{
     const name = document.querySelector('#name');
@@ -28,4 +20,50 @@ window.addEventListener('DOMContentLoaded',(event)=>{
         output.textContent = salary.value;
     })
 });
+
+const save = ()=>{
+    try{
+        let employeePayrollData = createEmployeePayroll();
+    }catch(e){
+        return;
+    }
+}
+const createEmployeePayroll = () =>{
+    let employeePayrollData = new EmployeePayrollData();
+    try{
+        employeePayrollData.name = getInputvalueById('#name');
+    }catch(e){
+        setTextValue('.text-error',e);
+        throw e;
+    }
+    employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
+    employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
+    employeePayrollData.department = getSelectedValues('[name=department]');
+    employeePayrollData.salary = getInputvalueById('#salary');
+    employeePayrollData.note = getInputvalueById('#notes');
+    let date = getInputvalueById('#day')+" "+getInputvalueById('#month')+" "+getInputvalueById('#year');
+    //employeePayrollData.startDate = Date.parse(date);
+    employeePayrollData.startDate = new Date(date);
+    alert(employeePayrollData.toString());
+    return employeePayrollData;
+}
+
+const getSelectedValues = (propertyValue) =>{
+    let allItems = document.querySelectorAll(propertyValue);
+    let selItems = [];
+    allItems.forEach(item=>{
+        if(item.checked) selItems.push(item.value);
+    });
+    return selItems;
+}
+
+const getInputvalueById = (id) =>{
+    let value = document.querySelector(id).value;
+    return value;
+}
+
+const getInputElementValue = (id) =>{
+    let value = document.getElementById(id).value;
+    return value;
+}
 
