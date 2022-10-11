@@ -1,12 +1,31 @@
-function selectRange(){
+/*function selectRange(){
     let salaryRangeInputEle = document.querySelector('#salary');
     let output = document.querySelector('.salary-output');
     output.innerHTML = salaryRangeInputEle.value;
     salaryRangeInputEle.addEventListener('input',function(){
         output.textContent = salaryRangeInputEle.value;
     });
-}
+}*/
 
-function save(frmdata){
+window.addEventListener('DOMContentLoaded',(event)=>{
+    const name = document.querySelector('#name');
+    const textError = document.querySelector('.text-error');
+    name.addEventListener('input',function(){
+        if(name.value.length == 0){
+            textError.textContent = "";
+        }
+        try{
+            (new EmployeePayrollData()).name = name.value;
+            textError.textContent = "";
+        }catch(e){
+            textError.textContent = e;
+        }
+    });
+    const salary = document.querySelector('#salary');
+    const output = document.querySelector('.salary-output');
+    output.textContent = salary.value;
+    salary.addEventListener('input',function(){
+        output.textContent = salary.value;
+    })
+});
 
-}
