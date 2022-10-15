@@ -62,6 +62,7 @@ const save = ()=>{
     try{
         let employeePayrollData = createEmployeePayroll();
             createAndUpdateStorage(employeePayrollData);
+            window.location.href = "http://localhost:5500/html/employee_paroll_home_page.html";
     }catch(e){
         return;
     }

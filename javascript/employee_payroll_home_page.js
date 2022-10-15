@@ -59,3 +59,11 @@ const remove = (node) =>{
     createInnerHtml();
 }
 
+const update = (node) =>{
+    // let editEmpID = node.id;
+    // let empListInLocalStorage = getEmployeePayrollDataFromStorage();
+    // let empPayrollToUpdate = empListInLocalStorage.find(empData => empData._id == node.id);
+    // localStorage.setItem('editEmp',JSON.stringify(empPayrollToUpdate));
+    // window.location.href="http://localhost:5500/html/employee_payroll.html";
+}
+
