@@ -76,13 +76,13 @@ function createAndUpdateStorage(employeePayrollData){
         employeePayrollList = [employeePayrollData];
     }
 
-    alert(employeePayrollList.toString());
-    console.log(employeePayrollList.toString());
     localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
 }
 
 const createEmployeePayroll = () =>{
     let employeePayrollData = new EmployeePayrollData();
+    employeePayrollData.id = createNewEmployeeId();
+
     try{
         employeePayrollData.name = getInputvalueById('#name');
     }catch(e){
@@ -95,9 +95,8 @@ const createEmployeePayroll = () =>{
     employeePayrollData.salary = getInputvalueById('#salary');
     employeePayrollData.note = getInputvalueById('#notes');
     let date = getInputvalueById('#day')+" "+getInputvalueById('#month')+" "+getInputvalueById('#year');
-    //employeePayrollData.startDate = Date.parse(date);
+    
     employeePayrollData.startDate = new Date(date);
-    alert(employeePayrollData.toString());
     return employeePayrollData;
 }
 
@@ -149,5 +148,10 @@ const setValue = (id, value) => {
     element.value = value;
 }
 
-
-
+const createNewEmployeeId = () => 
+{
+    let empID = localStorage.getItem("EmployeeID");
+    empID = !empID ? "1" : (parseInt(empID) + 1).toString();
+    localStorage.setItem("EmployeeID", empID);
+    return empID;
+}
