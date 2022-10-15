@@ -37,8 +37,7 @@ body {
 }
 
 .emp-text {
-    font: normal normal bold 20px/25px;
-    font-family: Roboto;
+    font-family: system-ui;
     letter-spacing: 0px;
     color: #82a70c;
     text-transform: capitalize;
@@ -58,7 +57,7 @@ body {
 }
 
 .form-head {
-    font: normal normal bold 24px/37px Roboto;
+    font-family: system-ui;
     letter-spacing: 0px;
     color: #42515f;
     text-transform: capitalize;
@@ -101,7 +100,7 @@ label {
     font-size: 16px;
     color: #42515f;
     opacity: 1;
-    font-family: Roboto;
+    font-family: system-ui;
 }
 
 .input {
@@ -134,7 +133,7 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
-    font: normal normal normal 16px Roboto;
+    font-family: system-ui;
     letter-spacing: 0px;
     color: #42515f;
     background-color: transparent;
@@ -149,7 +148,7 @@ select {
 
 .button {
     font-size: 20px;
-    font-family: Roboto;
+    font-family: system-ui;
     letter-spacing: 0px;
     color: #42515f;
     opacity: 1;

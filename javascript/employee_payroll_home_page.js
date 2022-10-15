@@ -57,7 +57,7 @@ const createEmployeePayrollJSON = () =>{
                 'Enginnering',
                 'Hr'
             ],
-            _salary:600000,
+            _salary:400000,
             _startDate: '30 Oct 2018',
             _note:'',
             _id: new Date().getTime,
